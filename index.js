@@ -4,6 +4,10 @@ var PORT = 3000;
 
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 function pippoHandler(req, res) {
   console.log(req.url, req.query, req.body);
