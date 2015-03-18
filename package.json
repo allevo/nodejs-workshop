@@ -1,0 +1,26 @@
+{
+  "name": "nodejs-workshop",
+  "version": "1.0.0",
+  "description": "A simple workshop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/allevo/nodejs-workshop.git"
+  },
+  "keywords": [
+    "nodejs",
+    "workshop"
+  ],
+  "author": "allevo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/allevo/nodejs-workshop/issues"
+  },
+  "homepage": "https://github.com/allevo/nodejs-workshop",
+  "dependencies": {
+
+  }
+}
