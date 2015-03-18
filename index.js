@@ -20,12 +20,12 @@ function pippoHandler(req, res) {
   async.waterfall([
       MongoClient.connect.bind(MongoClient, url),
       function(db, next) {
-        next(null, db.collection('documents'));
-      },
-      function(collection, next) {
-        collection.insert([
+        db.collection('documents').insert([
           {a : 1}, {a : 2}, {a : 3}
-        ], next);
+        ], function(err, inserted) {
+          db.close();
+          next(err, inserted);
+        });
       },
       function(inserted, next) {
         console.log('inserted', inserted);
