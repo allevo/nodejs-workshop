@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/allevo/nodejs-workshop",
   "dependencies": {
-
+    "express": "^4.12.3"
   }
 }

@@ -1,5 +1,5 @@
 curl http://localhost:3000/
 curl http://localhost:3000/pippo
 curl http://localhost:3000/pluto?aa=4
-
-npm install --save express
+curl http://localhost:3000/pippo?aa=4 -XPOST -d 'wow'
+npm install --save body-parser
