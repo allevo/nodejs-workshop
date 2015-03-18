@@ -14,8 +14,17 @@ function pippoHandler(req, res) {
   res.status(200).json({res: 'ok'});
 }
 
+function authHeader(req, res, next) {
+  console.log('auth middleware');
+  console.log(req.headers);
+  if (req.headers.no) {
+    return res.json({res: 'Arg!'});
+  }
+  next();
+}
+
 app.get('/pippo', pippoHandler);
-app.post('/pippo', pippoHandler);
+app.post('/pippo', authHeader, pippoHandler);
 
 var listenCallback = console.log.bind(console, 'listen to %d', PORT);
 app.listen(PORT, listenCallback);
