@@ -11,7 +11,26 @@ app.use(bodyParser.json());
 
 function pippoHandler(req, res) {
   console.log(req.url, req.query, req.body);
-  res.status(200).json({res: 'ok'});
+
+  var MongoClient = require('mongodb').MongoClient;
+  var url = 'mongodb://localhost:27017/myproject';
+
+  MongoClient.connect(url, function(err, db) {
+    if (err) {
+      return res.status(500).json(err);
+    }
+    console.log("Connected correctly to server");
+
+    var collection = db.collection('documents');
+    collection.insert([
+      {a : 1}, {a : 2}, {a : 3}
+    ], function(err, result) {
+
+      res.status(200).json(result);
+
+      db.close();
+    });
+  });
 }
 
 function authHeader(req, res, next) {
