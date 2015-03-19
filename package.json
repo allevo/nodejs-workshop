@@ -4,7 +4,7 @@
   "description": "A simple workshop",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "./node_modules/.bin/mocha test/",
     "start": "node index.js"
   },
   "repository": {
@@ -25,6 +25,10 @@
     "async": "^0.9.0",
     "body-parser": "^1.12.2",
     "express": "^4.12.3",
-    "mongodb": "^1.4.34"
+    "mongodb": "^1.4.34",
+    "request": "^2.53.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.1"
   }
 }

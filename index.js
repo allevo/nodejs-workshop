@@ -52,4 +52,8 @@ app.get('/pippo', pippoHandler);
 app.post('/pippo', authHeader, pippoHandler);
 
 var listenCallback = console.log.bind(console, 'listen to %d', PORT);
-app.listen(PORT, listenCallback);
+
+if (require.main === module) {
+  app.listen(PORT, listenCallback);
+}
+module.exports = app;

@@ -2,5 +2,4 @@ curl http://localhost:3000/pippo?aa=4 -XPOST -d 'wow'
 curl http://localhost:3000/pippo
 
 
-npm install --save-dev mocha
-npm install --save request
+npm install --save-dev jshint
