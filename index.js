@@ -29,7 +29,7 @@ function pippoHandler(req, res) {
       },
       function(inserted, next) {
         console.log('inserted', inserted);
-        next(inserted);
+        next(null, inserted);
       }
     ], function(err, result) {
       if (err) {

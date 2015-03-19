@@ -4,7 +4,9 @@
   "description": "A simple workshop",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha test/",
+    "test": "npm run-script mocha && npm run-script jshint",
+    "mocha": "./node_modules/.bin/mocha test/",
+    "jshint": "./node_modules/.bin/jshint .",
     "start": "node index.js"
   },
   "repository": {
@@ -29,6 +31,7 @@
     "request": "^2.53.0"
   },
   "devDependencies": {
+    "jshint": "^2.6.3",
     "mocha": "^2.2.1"
   }
 }
